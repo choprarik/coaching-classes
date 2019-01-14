@@ -1,0 +1,66 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+            <form [formGroup]="studentAddFormGroup" class="form-group">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label for="name">Name</label>
+                        <input class="form-control" formControlName="nameCtrl" placeholder="Name">
+                        <label for="class">Class</label>
+                        <input formControlName="classCtrl" class="form-control" placeholder="Class">
+                        <label for="parent">Father/Mother's Name</label>
+                        <input formControlName="parentCtrl" class="form-control" placeholder="Father/Mother's Name">
+                        <label for="contact">Contact</label>
+                        <input formControlName="contactCtrl" placeholder="Contact" class="form-control" minlength="10" maxlength="10">
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="address">Address</label>
+                        <textarea formControlName="addrCtrl" class="form-control"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <h2>Preview</h2><br>
+            <table border="0">
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>{{studentAddFormGroup.get('nameCtrl').value}}</td>
+                </tr><tr><br></tr>
+                <tr>
+                    <td><strong>Class:</strong></td>
+                    <td>{{studentAddFormGroup.get('classCtrl').value}}</td>
+                </tr><tr><br></tr>
+                <tr>
+                    <td><strong>Parent's Name:</strong></td>
+                    <td>{{studentAddFormGroup.get('parentCtrl').value}}</td>
+                </tr><tr><br></tr>
+                <tr>
+                    <td><strong>Contact:</strong></td>
+                    <td>{{studentAddFormGroup.get('contactCtrl').value}}</td>
+                </tr><tr><br></tr>
+                <tr>
+                    <td><strong>Address:</strong></td>
+                    <td>{{studentAddFormGroup.get('addrCtrl').value}}</td>
+                </tr><tr><br></tr>
+            </table>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)="addStudent()">Add</button>
+                    <button class="btn btn-primary" (click)="resetForm()">Reset</button>
+                    <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
